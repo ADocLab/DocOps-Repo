@@ -1,4 +1,4 @@
-# Document everything that's learnt and not things that are half cooked in mind.
+<!--Document everything that's learnt and not things that are half cooked in mind. -->
 # Learnings
 
 This section tracks everything learned during:
