@@ -1,17 +1,11 @@
-# Welcome to MkDocs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# Welcome to My Documentation Portal
 
-## Commands
+This site is part of my journey towards becoming a **Documentation Architect**, combining:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- DocOps (Documentation as Code)
+- Information Architecture
+- AI-assisted documentation workflows
+- CI/CD-driven documentation systems
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Feel free to explore each section using the navigation bar.
