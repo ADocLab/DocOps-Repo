@@ -1,0 +1,1 @@
+# Document everything that's learnt and not things that are half cooked in mind.

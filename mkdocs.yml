@@ -1,1 +1,22 @@
 site_name: My Docs
+nav: 
+  - Home: index.md
+
+  - Introduction: 
+    - Overview: intro/overview.md
+
+  - DocOps:
+    - Pipeline: docops/pipeline.md
+
+  - AI in Documentation:
+    - AI Tools Overview: ai/ai_doc_tools.md
+
+  - Information Architecture:
+    - Basics: architecture/information_architecture.md
+    
+  - Playground:
+    - Experiments: playground/experiments.md
+
+  - Learnings:
+    -Readme: learnings/readme.md
+
