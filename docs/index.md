@@ -9,5 +9,3 @@ This site is part of my journey towards becoming a **Documentation Architect**, 
 - CI/CD-driven documentation systems
 
 Feel free to explore each section using the navigation bar.
-
-Rebuild TestTEST
