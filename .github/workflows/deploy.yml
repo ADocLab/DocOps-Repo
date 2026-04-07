@@ -22,8 +22,8 @@ jobs:
           python-version: '3.x'
 
     #This installs everything required to build the site
-      - name: Install MkDocs
-        run: pip install mkdocs
+      - name: Install MkDocs and Material theme
+        run: pip install mkdocs mkdocs-material pymdown-extensions
 
     #MkDocs converts Markdown → HTML
       - name: Build site
