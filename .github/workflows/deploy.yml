@@ -8,22 +8,30 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
 
     steps:
+    <!--The workflow checks out the repository contents so the VM can access "mkdocs.yml", "docs/ folder" and Markdown pages-->
       - name: Checkout repo
         uses: actions/checkout@v3
 
+    <!--MkDocs runs on Python, so the VM installs it:-->
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
+    <!--This installs everything required to build the site:-->
       - name: Install MkDocs
         run: pip install mkdocs
 
+    <!-- MkDocs converts Markdown → HTML -->
       - name: Build site
         run: mkdocs build
 
+    <!-- The built site is deployed automatically using the community action -->
+    <!-- ✅The action pushes HTML files to the gh-pages branch -->
+    <!-- ✅ GitHub Pages hosts the updated site --> 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

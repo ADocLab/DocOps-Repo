@@ -9,3 +9,4 @@ This section contains an overview of the purpose of this documentation portal.
 - Experiment with AI in documentation  
 - Explore information architecture  
 - Develop a strong portfolio for Documentation Architect roles
+

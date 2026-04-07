@@ -1,12 +1,48 @@
 site_name: My Docs
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  
+
+  
+font:
+  text: Roboto
+  code: Roboto Mono
+
+  palette:
+      - scheme: default
+        primary: indigo
+        accent: indigo
+      - scheme: slate
+        primary: indigo
+        accent: indigo
+
+
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.sections
+    - navigation.instant
+    - navigation.expand
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - toc.integrate
+    - content.footer
+
 nav: 
   - Home: index.md
 
   - Introduction: 
-    - Overview: intro/overview.md
+    - Overview: intro/index.md
+    - What is Documentaion Architecture?: intro/introduction.md
 
-  - DocOps:
-    - Pipeline: docops/pipeline.md
+  - DocOps: 
+    - Pipeline Overview: docops/index.md
+    - CI/CD Pipeline: docops/ci_cd_pipeline.md
 
   - AI in Documentation:
     - AI Tools Overview: ai/ai_doc_tools.md
@@ -20,3 +56,20 @@ nav:
   - Learnings:
     - Notes: learnings/readme.md
 
+markdown_extensions:
+  - admonition
+  - footnotes
+  - def_list
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ADocLab
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/anubhav-pandey
+  
+  copyright: "© 2026 Anubhav Pandey - Documentation Architect"
