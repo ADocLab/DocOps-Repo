@@ -45,13 +45,16 @@ nav:
     - CI/CD Pipeline: docops/ci_cd_pipeline.md
 
   - AI in Documentation:
-    - AI Tools Overview: ai/ai_doc_tools.md
+    - Overview: ai/index.md
+    - AI in Documentaion: ai/ai_doc_tools.md
 
   - Information Architecture:
-    - Basics: architecture/information_architecture.md
+    - Overview: architecture/index.md
+    - Principles: architecture/information_architecture.md
     
   - Playground:
-    - Experiments: playground/experiments.md
+    - Overview: playground/index.md
+    - Material Components: playground/advanced_material_component.md
 
   - Learnings:
     - Notes: learnings/readme.md
@@ -63,6 +66,7 @@ markdown_extensions:
   - attr_list
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tabbed
   - pymdownx.highlight
 
 extra:

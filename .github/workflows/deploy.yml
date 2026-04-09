@@ -1,10 +1,24 @@
 name: Deploy MkDocs Site
+#Why This Pipeline is Powerful?
+#✅ Reproducible
+#Every build runs in a clean environment.
+#✅ Automated
+#One commit = full site deployed.
+#✅ Scalable
+#Works for small or large documentation sets.
+#✅ Versioned
+#Every doc change is tracked via Git history.
+#✅ Professional
+#Matches workflow of Google, Microsoft etc.
 
+
+# Triggers this workflow on every push to the main branch
 on:
   push:
     branches:
       - main
 
+# Runs this job on a fresh Ubuntu VM for every workflow execution
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -37,3 +51,13 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site 
+          
+#Troubleshooting the Pipeline
+#✅ Build fails
+#Check the GitHub Actions log → syntax error in YAML or mkdocs.yml.
+#✅ Site not updating
+#Check GitHub Pages → ensure mode = GitHub Actions.
+#✅ HTML not generated
+#Verify mkdocs.yml for missing indentation or bad paths.
+#✅ CSS/Layout broken
+#Check if mkdocs-material installed correctly.
