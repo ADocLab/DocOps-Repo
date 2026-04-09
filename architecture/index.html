@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../intro/introduction/">
+        <link rel="prev" href="../ai/ai_doc_tools/">
       
       
-        <link rel="next" href="ci_cd_pipeline/">
+        <link rel="next" href="information_architecture/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Pipeline Overview - My Docs</title>
+        <title>Overview - My Docs</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docops-cicd-pipeline" class="md-skip">
+        <a href="#information-architecture-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pipeline Overview
+              Overview
             
           </span>
         </div>
@@ -328,20 +328,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -362,7 +360,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -377,19 +375,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../docops/" class="md-nav__link">
         
   
   
@@ -405,7 +394,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -418,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ci_cd_pipeline/" class="md-nav__link">
+      <a href="../docops/ci_cd_pipeline/" class="md-nav__link">
         
   
   
@@ -560,18 +548,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -592,7 +582,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -607,10 +597,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -626,6 +625,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -638,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/information_architecture/" class="md-nav__link">
+      <a href="information_architecture/" class="md-nav__link">
         
   
   
@@ -893,24 +893,22 @@
 
 
 
-<h1 id="docops-cicd-pipeline">DocOps: CI/CD Pipeline</h1>
-<p>This site is deployed using:</p>
+<h1 id="information-architecture-overview">Information Architecture Overview</h1>
+<p>Information Architecture (IA) is the practice of organizing, structuring, and labeling content so that users can <strong>find</strong>, <strong>understand</strong>, and <strong>navigate</strong> information effectively.</p>
+<p>In documentation systems, IA determines:
+- how content is grouped
+- how pages relate to each other
+- how users move through information
+- how scalable the documentation becomes over time</p>
+<p>Key concepts include:</p>
 <ul>
-<li>GitHub Actions  </li>
-<li>MkDocs  </li>
-<li>GitHub Pages  </li>
-<li>Automated deployment to <code>gh-pages</code> branch  </li>
-<li>Documentation-as-Code practices  </li>
+<li>Content modeling  </li>
+<li>Metadata  </li>
+<li>Taxonomy  </li>
+<li>Navigation  </li>
+<li>Chunking for LLMs  </li>
+<li>Findability &amp; discoverability  </li>
 </ul>
-<p>Whenever content is updated and pushed to the <code>main</code> branch:</p>
-<ol>
-<li>GitHub Actions creates a fresh Ubuntu VM  </li>
-<li>Installs MkDocs  </li>
-<li>Builds the site  </li>
-<li>Pushes the generated HTML to the <code>gh-pages</code> branch  </li>
-<li>GitHub Pages updates the live site<br />
-Note: For GitHub pages to reflect the changes real time, Build and Deployment &gt; Source will have to be set as 'Deploy From Branch' followed by <code>gh-pages</code> &gt; '/root', this will have to be done first time only to activate pages afterwards set it back to GitHub Actions.</li>
-</ol>
 
 
 
