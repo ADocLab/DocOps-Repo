@@ -5,21 +5,18 @@ theme:
   custom_dir: overrides
   logo: assets/logo.png
   favicon: assets/favicon.png
-  
-
-  
-font:
-  text: Roboto
-  code: Roboto Mono
 
   palette:
-      - scheme: default
-        primary: indigo
-        accent: indigo
-      - scheme: slate
-        primary: indigo
-        accent: indigo
+    - scheme: default
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      primary: indigo
+      accent: indigo
 
+  font:
+    text: Roboto
+    code: Roboto Mono
 
   features:
     - navigation.tabs
@@ -32,15 +29,20 @@ font:
     - content.code.copy
     - toc.integrate
     - content.footer
+    - content.cards    # ✅ Correct
+    # - content.grid    # ❌ MkDocs Material DOES NOT HAVE THIS FEATURE. Remove it.
 
-nav: 
+plugins:
+  - search
+
+nav:
   - Home: index.md
 
-  - Introduction: 
+  - Introduction:
     - Overview: intro/index.md
     - What is Documentaion Architecture?: intro/introduction.md
 
-  - DocOps: 
+  - DocOps:
     - Pipeline Overview: docops/index.md
     - CI/CD Pipeline: docops/ci_cd_pipeline.md
 
@@ -51,7 +53,7 @@ nav:
   - Information Architecture:
     - Overview: architecture/index.md
     - Principles: architecture/information_architecture.md
-    
+
   - Playground:
     - Overview: playground/index.md
     - Material Components: playground/advanced_material_component.md
@@ -68,6 +70,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed
   - pymdownx.highlight
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra:
   social:
@@ -75,5 +80,5 @@ extra:
       link: https://github.com/ADocLab
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/anubhav-pandey
-  
+
   copyright: "© 2026 Anubhav Pandey - Documentation Architect"

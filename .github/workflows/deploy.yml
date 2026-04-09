@@ -12,18 +12,44 @@ name: Deploy MkDocs Site
 #Matches workflow of Google, Microsoft etc.
 
 
-# Triggers this workflow on every push to the main branch
+# Triggers this workflow on whenever a change is pushed to anyfile inside docs folder on the main branch.
+# Prevents unnecessary deployment and also saves time.
 on:
   push:
     branches:
       - main
+    paths:
+      - 'docs/**'
+      - '**.md'
+      - 'mkdocs.yml'
+  
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - '**.md'
+
 
 # Runs this job on a fresh Ubuntu VM for every workflow execution
 jobs:
+  
+  preview:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - run: pip install mkdocs-material mkdocs-material-extensions pymdown-extensions
+      - run: mkdocs build --strict
+
   deploy:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push'
     
-
     steps:
     #The workflow checks out the repository contents so the VM can access "mkdocs.yml", "docs/ folder" and Markdown pages
       - name: Checkout repo
@@ -38,6 +64,15 @@ jobs:
     #This installs everything required to build the site
       - name: Install MkDocs and Material theme
         run: pip install mkdocs mkdocs-material pymdown-extensions
+
+    #Catches all links that are broken for any reason like missing file or wrong path  
+      - name: Validate YAML + check links
+        run: mkdocs build --strict
+
+    # Validates the complete yml file for any kind of indentation issue, this saves time and unnecessary use of resources.  
+      - name: Validate mkdocs.yml
+        run: mkdocs build --config-file mkdocs.yml --strict --verbose
+
 
     #MkDocs converts Markdown → HTML
       - name: Build site
